@@ -1,0 +1,347 @@
+:root {
+    --biru-gelap: #0c4a6e;
+    --biru-utama: #0284c7;
+    --biru-terang: #38bdf8;
+    --biru-muda: #7dd3fc;
+    --biru-sangatmuda: #e0f2fe;
+    --putih: #FFFFFF;
+    --putih-transparan: rgba(255, 255, 255, 0.92);
+    --teks-gelap: #0c4a6e;
+    --bayangan: rgba(14, 165, 233, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #e0f2fe, #7dd3fc, #38bdf8, #0284c7);
+    background-size: 400% 400%;
+    animation: latarBergerak 15s ease infinite;
+    min-height: 100vh;
+    color: var(--teks-gelap);
+    position: relative;
+}
+
+@keyframes latarBergerak {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.bubbles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bubbles span {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: naikTurun 8s infinite ease-in-out;
+    opacity: 0.25;
+}
+
+.bubbles span:nth-child(1) { left: 8%; animation-delay: 0s; }
+.bubbles span:nth-child(2) { left: 22%; animation-delay: 1.2s; }
+.bubbles span:nth-child(3) { left: 35%; animation-delay: 2.1s; }
+.bubbles span:nth-child(4) { left: 48%; animation-delay: 0.6s; }
+.bubbles span:nth-child(5) { left: 62%; animation-delay: 3.3s; }
+.bubbles span:nth-child(6) { left: 75%; animation-delay: 1.8s; }
+.bubbles span:nth-child(7) { left: 85%; animation-delay: 4.2s; }
+.bubbles span:nth-child(8) { left: 12%; animation-delay: 2.8s; }
+.bubbles span:nth-child(9) { left: 55%; animation-delay: 5.1s; }
+.bubbles span:nth-child(10) { left: 92%; animation-delay: 3.6s; }
+
+@keyframes naikTurun {
+    0% { transform: translateY(110vh) scale(0.5); opacity: 0; }
+    20% { opacity: 0.4; }
+    100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 15px var(--bayangan);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--biru-utama);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--teks-gelap);
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding-bottom: 0.3rem;
+}
+
+.nav-links a:hover,
+.nav-links a.aktif {
+    color: var(--biru-utama);
+    border-bottom: 2px solid var(--biru-terang);
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem 1rem 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.banner-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 2rem;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--putih-transparan);
+    box-shadow: 0 4px 15px var(--bayangan);
+}
+
+.banner-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: var(--putih);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.sub-judul {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--putih);
+}
+
+.tombol-utama {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background: var(--putih);
+    color: var(--biru-utama);
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px var(--bayangan);
+}
+
+.tombol-utama:hover {
+    transform: translateY(-2px);
+}
+
+.ekskul-section {
+    padding: 2rem 1rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.bagian-judul {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: var(--putih);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.grid-ekskul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.kartu-ekskul {
+    background: var(--putih-transparan);
+    border-radius: 20px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px var(--bayangan);
+}
+
+.gambar-ekskul {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+}
+
+.kartu-ekskul h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: var(--biru-gelap);
+}
+
+.deskripsi {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: var(--teks-gelap);
+}
+
+.tombol-pilih {
+    padding: 0.6rem 1.8rem;
+    background: var(--biru-sangatmuda);
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    color: var(--biru-gelap);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tombol-pilih:hover {
+    background: var(--biru-muda);
+}
+
+.tombol-pilih.terpilih {
+    background: #a7f3d0;
+}
+
+.form-section {
+    max-width: 520px;
+    margin: 2rem auto 3rem;
+    padding: 2rem 1.5rem;
+    background: var(--putih-transparan);
+    border-radius: 24px;
+    box-shadow: 0 6px 18px var(--bayangan);
+    position: relative;
+    z-index: 2;
+}
+
+.form-section .bagian-judul {
+    color: var(--biru-gelap);
+    text-shadow: none;
+}
+
+.grup-input {
+    margin-bottom: 1.2rem;
+}
+
+.grup-input label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--biru-utama);
+}
+
+.grup-input input,
+.grup-input select,
+.grup-input textarea {
+    width: 100%;
+    padding: 0.85rem;
+    border: 2px solid var(--biru-muda);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    background: var(--putih);
+    color: var(--teks-gelap);
+}
+
+.grup-input input::placeholder,
+.grup-input textarea::placeholder {
+    color: #94a3b8;
+}
+
+.grup-input input:focus,
+.grup-input select:focus,
+.grup-input textarea:focus {
+    outline: none;
+    border-color: var(--biru-utama);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.tombol-kirim {
+    width: 100%;
+    padding: 0.95rem;
+    background: var(--biru-utama);
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--putih);
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+}
+
+.tombol-kirim:hover {
+    background: var(--biru-gelap);
+}
+
+.sembunyi {
+    display: none;
+}
+
+#pesan-berhasil {
+    margin-top: 1.2rem;
+    padding: 1rem;
+    background: #f0fdf4;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #166534;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--biru-utama);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    .grid-ekskul {
+        grid-template-columns: 1fr;
+    }
+    .form-section {
+        margin: 1rem;
+    }
+}

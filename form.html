@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran Ekskul</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="bubbles">
+        <span>✨</span><span>💜</span><span>🌸</span><span>💧</span><span>⭐</span>
+        <span>🎀</span><span>🦋</span><span>💫</span><span>🍭</span><span>🌈</span>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="asset/image/logo.png" alt="Logo Sekolah" class="logo-img">
+            <span class="logo-text">Ekskul Kreatif</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#daftar-ekskul">Ekskul</a></li>
+            <li><a href="form.html" class="aktif">Form Daftar</a></li>
+        </ul>
+    </nav>
+
+    <section class="form-section">
+        <h2 class="bagian-judul">Formulir Pendaftaran Ekskul</h2>
+        
+        <form id="form-pendaftaran">
+            <div class="grup-input">
+                <label>Nama Lengkap</label>
+                <input type="text" id="nama-siswa" placeholder="Masukkan nama lengkapmu..." required>
+            </div>
+
+            <div class="grup-input">
+                <label>Kelas</label>
+                <select id="kelas" required>
+                    <option value="">-- Pilih Kelas --</option>
+                    <option value="1">Kelas 1</option>
+                    <option value="2">Kelas 2</option>
+                    <option value="3">Kelas 3</option>
+                    <option value="4">Kelas 4</option>
+                    <option value="5">Kelas 5</option>
+                    <option value="6">Kelas 6</option>
+                </select>
+            </div>
+
+            <div class="grup-input">
+                <label>Ekskul yang Dipilih</label>
+                <select id="ekskul-pilihan" required>
+                    <option value="">-- Pilih Ekskul --</option>
+                    <option value="Pramuka">Pramuka</option>
+                    <option value="TBQ">TBQ</option>
+                    <option value="Paskibra">Paskibra</option>
+                    <option value="Tari">Tari</option>
+                    <option value="Taekwondo">Taekwondo</option>
+                    <option value="Voli">Bola Voli</option>
+                </select>
+            </div>
+
+            <div class="grup-input">
+                <label>No. WhatsApp Orang Tua</label>
+                <input type="tel" id="wa-orangtua" placeholder="Contoh: 0812-xxxx-xxxx" required>
+            </div>
+
+            <div class="grup-input">
+                <label>Alasan Ingin Bergabung</label>
+                <textarea id="alasan" rows="4" placeholder="Tulis alasanmu ingin mengikuti ekskul ini..."></textarea>
+            </div>
+
+            <button type="submit" class="tombol-kirim">Kirim Pendaftaran</button>
+        </form>
+
+        <div id="pesan-berhasil" class="sembunyi">
+            Terima kasih! Pendaftaranmu sudah terkirim! Kami akan segera menghubungi orang tua kamu.
+        </div>
+    </section>
+
+    <footer>
+        <p>Dibuat dengan cinta untuk Siswa-Siswi | Pendaftaran Ekskul 2026</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
